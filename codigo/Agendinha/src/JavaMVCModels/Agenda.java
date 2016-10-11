@@ -27,6 +27,10 @@ public class Agenda {
         return this.lembretes;
     }
     
+    public void addLembrete(Lembrete lembrete) {
+        this.lembretes.add(lembrete);
+    }
+    
     public void setNome(String novoNome) {
         this.nome = novoNome;
     }

@@ -23,25 +23,45 @@ public class JavaHelloCollections {
         //HelloWorldController controller = new HelloWorldController();
         // Start the application
         //controller.startApplication();
-        LembreteController controller = new LembreteController();
-        Date data = new Date();
+        LembreteController ctrlLembrete = new LembreteController();
+        AgendaController ctrlAgenda = new AgendaController();
+        Agenda agendinha = ctrlAgenda.createAgenda("Teste", "Eu mesmo", "3");
+        System.out.println(ctrlAgenda.readAgenda(agendinha));
         
-        Lembrete lembrete = controller.createLembrete(data, "Agendinha");
-        Lembrete lembrete2 = controller.createLembrete(data, "Agendinha2");
+        Date data = new Date();        
+        ctrlAgenda.adicionaLembrete(agendinha, data, "Agendinha1");
+        ctrlAgenda.adicionaLembrete(agendinha, data, "Agendinha2");
+        ctrlAgenda.adicionaLembrete(agendinha, data, "Agendinha3");
+        ctrlAgenda.adicionaLembrete(agendinha, data, "Agendinha4");
+        ctrlAgenda.adicionaLembrete(agendinha, data, "Agendinha5");
 
-        System.out.println(controller.readLembrete(lembrete));
-        System.out.println(controller.readLembrete(lembrete2));
+        System.out.println(ctrlAgenda.readAgenda(agendinha));
+
+        ctrlAgenda.deleteLembrete(agendinha, agendinha.getLembretes().get(0));
+        System.out.println(ctrlAgenda.readAgenda(agendinha));
+        
+        ctrlAgenda.deleteAllLembretes(agendinha);
+        System.out.println(ctrlAgenda.readAgenda(agendinha));
+        
+        /*
+        Lembrete lembrete = ctrlLembrete.createLembrete(data, "Agendinha");
+        Lembrete lembrete2 = ctrlLembrete.createLembrete(data, "Agendinha2");
+
+        System.out.println(ctrlLembrete.readLembrete(lembrete));
+        System.out.println(ctrlLembrete.readLembrete(lembrete2));
 
         try {
             Thread.sleep(5000);
             Date novaData = new Date();
-            controller.updateLembrete(lembrete, novaData, "Nova agendinha aewwwwoooo!");
-            controller.updateLembrete(lembrete2, novaData, "Nova agendinha aewwwwoooo2!");
-            System.out.println(controller.readLembrete(lembrete));
-            System.out.println(controller.readLembrete(lembrete2));
+            ctrlLembrete.updateLembrete(lembrete, novaData, "Nova agendinha aewwwwoooo!");
+            ctrlLembrete.updateLembrete(lembrete2, novaData, "Nova agendinha aewwwwoooo2!");
+            System.out.println(ctrlLembrete.readLembrete(lembrete));
+            System.out.println(ctrlLembrete.readLembrete(lembrete2));
         } catch(InterruptedException ex) {
             System.out.println("ERRROOW!");
-        }
+        }*/        
+        
+        
         
         
     }

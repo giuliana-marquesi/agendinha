@@ -28,30 +28,42 @@ public class AgendaController {
         return mensagem;
     };
     
-    public void updateAgenda() {
+    public boolean updateAgenda(Agenda agendinha, String nome, String dono, String tipo) {
+        if(nome != null && dono != null && tipo != null) {
+            agendinha.setDono(dono);
+            agendinha.setNome(nome);
+            agendinha.setTipo(tipo);
+            return true;
+        }
+        return false;
         //aqui só precisa fazer o update dos atributos da agenda
     };    
     
     //Controller Dono
-        public void addAgenda() {
-            
+        public void adicionaAgenda(String nome, String dono, String tipo) {
+            Agenda novoAgenda = new Agenda(nome, dono, tipo);
+            //Agenda novaAgenda = ctrlAgenda.createAgenda(nome, dono, tipo);
+            //agendas.addAgenda(novaAgenda);            
         };
 
         public void deleteAgenda() {
             
         };
     
-    public void addLembrete(Date data, String Descricao) {
+    public void adicionaLembrete(Agenda agendinha, Date data, String Descricao) {
+        Lembrete novoLembrete = ctrlLembrete.createLembrete(data, Descricao);
+        agendinha.addLembrete(novoLembrete);
         //criar lembrete e colocar no array
     };
     
     public void deleteAllLembretes(Agenda agendinha) {
         //usar getLembretes pra zerar o arraylist
+        agendinha.getLembretes().clear();
     };
     
-    public void deleteLembrete(Agenda agendinha) {
+    public void deleteLembrete(Agenda agendinha, Lembrete lembrete) {
+        agendinha.getLembretes().remove(lembrete);
         //como dar 'free' numa instancia?
-        //Se um objeto é instanciado num metódo morre junto com o método? 
-        //
+        //Se um objeto é instanciado num metódo morre junto com o método?       
     };
 }
