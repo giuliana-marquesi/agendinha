@@ -23,7 +23,7 @@ public class JavaHelloCollections {
         //HelloWorldController controller = new HelloWorldController();
         // Start the application
         //controller.startApplication();
-        LembreteController ctrlLembrete = new LembreteController();
+        //LembreteController ctrlLembrete = new LembreteController();
         AgendaController ctrlAgenda = new AgendaController();
         Agenda agendinha = ctrlAgenda.createAgenda("Teste", "Eu mesmo", "3");
         System.out.println(ctrlAgenda.readAgenda(agendinha));
