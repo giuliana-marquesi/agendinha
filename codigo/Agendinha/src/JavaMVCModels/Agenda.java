@@ -15,28 +15,39 @@ public class Agenda {
     private String dono;
     private String tipo;
     private ArrayList<Lembrete> lembretes;
-
-    private void setNome(String novoNome) {
+    
+    public Agenda(String nome, String dono, String tipo) {
+        this.nome = nome;
+        this.dono = dono;
+        this.tipo = tipo;
+        this.lembretes = new ArrayList<Lembrete>();     
+    }
+    
+    public ArrayList<Lembrete> getLembretes() {
+        return this.lembretes;
+    }
+    
+    public void setNome(String novoNome) {
         this.nome = novoNome;
     }
     
-    private void setDono(String novoDono) {
+    public void setDono(String novoDono) {
         this.dono = novoDono;
     }
     
-    private void setTipo(String novoTipo) {
+    public void setTipo(String novoTipo) {
         this.tipo = novoTipo;
     }
 
-    private String getNome() {
+    public String getNome() {
         return this.nome;
     }
 
-    private String getDono(){
+    public String getDono(){
         return this.dono;
     }
 
-    private String getTipo() {
+    public String getTipo() {
         return this.tipo;
     }
    

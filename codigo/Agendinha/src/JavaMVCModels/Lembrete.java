@@ -14,19 +14,24 @@ public class Lembrete {
    private Date data;
    private String descricao;
    
-   private Date getData(){
+   public Lembrete(Date data, String descricao) {
+       this.data = data;
+       this.descricao = descricao;
+   }
+   
+   public Date getData(){
         return this.data;
    }
    
-   private String getDescricao(){
+   public String getDescricao(){
         return this.descricao;
    }
    
-   private void setDate(Date novaData) {
+   public void setDate(Date novaData) {
        this.data = novaData;
    }
    
-   private void setDescricao(String novaDescricao) {
+   public void setDescricao(String novaDescricao) {
        this.descricao = novaDescricao;
    }
 }
