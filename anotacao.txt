@@ -1,0 +1,5 @@
+* a lista de agendas pode se chamar ControllerGrupoAgendas
+* ela pode ser chamada apenas para procurar uma agenda e retornar ela, recebendo uma string. Pode ser pelo nome, pelo dono e tal - se quiser complexar...
+* essa  seria a funcao basica adicionar agenda ao Grupo,deletar e procurar.
+* a manipulacao restante toda ocorre com o controlar agenda e lembrete.
+*nprecisamos de um metodo de busca de lembretes. -> acoh que ja esta implementado no agenda pro profs. precisa adaptar.
