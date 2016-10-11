@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package JavaMVCControllers;
+
+import java.util.Date;
 import JavaMVCModels.*;
 import JavaMVCControllers.*;
 
@@ -27,17 +29,29 @@ public class AgendaController {
     };
     
     public void updateAgenda() {
+        //aqui só precisa fazer o update dos atributos da agenda
+    };    
+    
+    //Controller Dono
+        public void addAgenda() {
+            
+        };
+
+        public void deleteAgenda() {
+            
+        };
+    
+    public void addLembrete(Date data, String Descricao) {
+        //criar lembrete e colocar no array
     };
     
-    public void deleteAgenda() {
+    public void deleteAllLembretes(Agenda agendinha) {
+        //usar getLembretes pra zerar o arraylist
     };
     
-    public void addLembrete() {
-    };
-    
-    public void deleteAllLembretes() {
-    };
-    
-    public void deleteLembrete() {
+    public void deleteLembrete(Agenda agendinha) {
+        //como dar 'free' numa instancia?
+        //Se um objeto é instanciado num metódo morre junto com o método? 
+        //
     };
 }
