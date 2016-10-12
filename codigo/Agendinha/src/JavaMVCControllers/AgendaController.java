@@ -15,6 +15,7 @@ import JavaMVCControllers.*;
  */
 public class AgendaController {
     LembreteController ctrlLembrete = new LembreteController();
+    
     public Agenda createAgenda(String nome, String dono, String tipo) {
         Agenda agendinha = new Agenda(nome,dono,tipo);
         return agendinha;

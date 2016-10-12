@@ -6,6 +6,7 @@
 package JavaMVCControllers;
 import JavaMVCModels.*;
 import java.util.ArrayList;
+import JavaMVCViews.*;
 
 /**
  *
@@ -13,6 +14,22 @@ import java.util.ArrayList;
  */
 public class ControllerStringToModel {
     
-    ArrayList<Agenda> grupoAgendas;
+    private ArrayList<Agenda> grupoAgendas;
+    private AgendaController ctrlAgenda;
     
+    public ControllerStringToModel(){
+        grupoAgendas = new ArrayList<Agenda>();
+        ctrlAgenda = new AgendaController();
+    }
+    
+    public void startApplication() {
+        // View the application's GUI
+        NewJFrame view = new NewJFrame();
+        view.setVisible(true);
+    }
+    
+    public void incluiAgenda(String nomeAgenda, String nomeDono, String tipo){
+        Agenda novaAgenda = ctrlAgenda.createAgenda(nomeAgenda,nomeDono ,tipo);
+        grupoAgendas.add(novaAgenda);
+    }
 }

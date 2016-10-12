@@ -3,11 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/vinicius/Documents/Github/agendinha/codigo/Agendinha/src/JavaMVCControllers/LembreteController.java</file>
-            <file>file:/home/vinicius/Documents/Github/agendinha/codigo/Agendinha/src/javahellocollections/JavaHelloCollections.java</file>
-            <file>file:/home/vinicius/Documents/Github/agendinha/codigo/Agendinha/src/JavaMVCControllers/AgendaController.java</file>
-            <file>file:/home/vinicius/Documents/Github/agendinha/codigo/Agendinha/src/JavaMVCModels/Lembrete.java</file>
-            <file>file:/home/vinicius/Documents/Github/agendinha/codigo/Agendinha/src/JavaMVCModels/Agenda.java</file>
+            <file>file:/home/gigik_user/Documentos/trocas/esse_semestre/orientada_objeto/agendinha/codigo/Agendinha/src/JavaMVCViews/HelloWorldView.java</file>
+            <file>file:/home/gigik_user/Documentos/trocas/esse_semestre/orientada_objeto/agendinha/codigo/Agendinha/src/JavaMVCControllers/LembreteController.java</file>
+            <file>file:/home/gigik_user/Documentos/trocas/esse_semestre/orientada_objeto/agendinha/codigo/Agendinha/src/JavaMVCModels/Agenda.java</file>
+            <file>file:/home/gigik_user/Documentos/trocas/esse_semestre/orientada_objeto/agendinha/codigo/Agendinha/src/javahellocollections/JavaHelloCollections.java</file>
+            <file>file:/home/gigik_user/Documentos/trocas/esse_semestre/orientada_objeto/agendinha/codigo/Agendinha/src/JavaMVCControllers/ControllerStringToModel.java</file>
+            <file>file:/home/gigik_user/Documentos/trocas/esse_semestre/orientada_objeto/agendinha/codigo/Agendinha/src/JavaMVCControllers/AgendaController.java</file>
         </group>
     </open-files>
 </project-private>

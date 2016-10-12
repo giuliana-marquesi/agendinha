@@ -8,6 +8,7 @@ package javahellocollections;
 import JavaMVCControllers.*;
 import java.util.Date;
 import JavaMVCModels.*;
+import JavaMVCViews.*;
 
 /**
  *
@@ -18,30 +19,35 @@ public class JavaHelloCollections {
     /**
      * @param args the command line arguments
      */
+    private static ControllerStringToModel inicia = new ControllerStringToModel();
+    
     public static void main(String[] args) {
+        
+        inicia.startApplication();
+        
         // TODO code application logic here
         //HelloWorldController controller = new HelloWorldController();
         // Start the application
         //controller.startApplication();
         //LembreteController ctrlLembrete = new LembreteController();
-        AgendaController ctrlAgenda = new AgendaController();
-        Agenda agendinha = ctrlAgenda.createAgenda("Teste", "Eu mesmo", "3");
-        System.out.println(ctrlAgenda.readAgenda(agendinha));
-        
-        Date data = new Date();        
-        ctrlAgenda.adicionaLembrete(agendinha, data, "Agendinha1");
-        ctrlAgenda.adicionaLembrete(agendinha, data, "Agendinha2");
-        ctrlAgenda.adicionaLembrete(agendinha, data, "Agendinha3");
-        ctrlAgenda.adicionaLembrete(agendinha, data, "Agendinha4");
-        ctrlAgenda.adicionaLembrete(agendinha, data, "Agendinha5");
-
-        System.out.println(ctrlAgenda.readAgenda(agendinha));
-
-        ctrlAgenda.deleteLembrete(agendinha, agendinha.getLembretes().get(0));
-        System.out.println(ctrlAgenda.readAgenda(agendinha));
-        
-        ctrlAgenda.deleteAllLembretes(agendinha);
-        System.out.println(ctrlAgenda.readAgenda(agendinha));
+//        AgendaController ctrlAgenda = new AgendaController();
+//        Agenda agendinha = ctrlAgenda.createAgenda("Teste", "Eu mesmo", "3");
+//        System.out.println(ctrlAgenda.readAgenda(agendinha));
+//        
+//        Date data = new Date();        
+//        ctrlAgenda.adicionaLembrete(agendinha, data, "Agendinha1");
+//        ctrlAgenda.adicionaLembrete(agendinha, data, "Agendinha2");
+//        ctrlAgenda.adicionaLembrete(agendinha, data, "Agendinha3");
+//        ctrlAgenda.adicionaLembrete(agendinha, data, "Agendinha4");
+//        ctrlAgenda.adicionaLembrete(agendinha, data, "Agendinha5");
+//
+//        System.out.println(ctrlAgenda.readAgenda(agendinha));
+//
+//        ctrlAgenda.deleteLembrete(agendinha, agendinha.getLembretes().get(0));
+//        System.out.println(ctrlAgenda.readAgenda(agendinha));
+//        
+//        ctrlAgenda.deleteAllLembretes(agendinha);
+//        System.out.println(ctrlAgenda.readAgenda(agendinha));
         
         /*
         Lembrete lembrete = ctrlLembrete.createLembrete(data, "Agendinha");
