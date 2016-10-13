@@ -55,6 +55,16 @@ public class MasterPage extends javax.swing.JFrame {
         tipoForm = new javax.swing.JTextField();
         confirma = new javax.swing.JButton();
         menu = new javax.swing.JTabbedPane();
+        veja_agenda = new javax.swing.JPanel();
+        textoAgendinha = new javax.swing.JLabel();
+        modifique_agenda = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        novoDonoModificado = new javax.swing.JTextField();
+        novoTipoModificado = new javax.swing.JTextField();
+        novaAgendaModificada = new javax.swing.JTextField();
+        confirmModifyAgenda = new javax.swing.JButton();
         adicione_lembrete = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -71,23 +81,14 @@ public class MasterPage extends javax.swing.JFrame {
         modificar_busca_lembrete = new javax.swing.JButton();
         jLabel16 = new javax.swing.JLabel();
         resultado_modifique_lembrete = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
+        veja_lembrete = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         descricao_search = new javax.swing.JTextArea();
         search_lembrete = new javax.swing.JButton();
         jLabel13 = new javax.swing.JLabel();
-        lembrete_encontrado = new javax.swing.JLabel();
-        veja_agenda = new javax.swing.JPanel();
-        textoAgendinha = new javax.swing.JLabel();
-        modifique_agenda = new javax.swing.JPanel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        novoDonoModificado = new javax.swing.JTextField();
-        novoTipoModificado = new javax.swing.JTextField();
-        novaAgendaModificada = new javax.swing.JTextField();
-        confirmModifyAgenda = new javax.swing.JButton();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        lembrete_encontrado = new javax.swing.JEditorPane();
         exclua_lembretes = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
@@ -98,7 +99,6 @@ public class MasterPage extends javax.swing.JFrame {
         jLabel20 = new javax.swing.JLabel();
         excluir_buscar_lembrete = new javax.swing.JButton();
 
-        dialog_padrao.setPreferredSize(new java.awt.Dimension(400, 313));
         dialog_padrao.setResizable(false);
         dialog_padrao.setSize(new java.awt.Dimension(300, 200));
 
@@ -253,6 +253,100 @@ public class MasterPage extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        veja_agenda.setBorder(javax.swing.BorderFactory.createTitledBorder("Você está vendo sua Agenda"));
+        veja_agenda.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                veja_agendaFocusGained(evt);
+            }
+        });
+
+        textoAgendinha.setText("jLabel12");
+
+        javax.swing.GroupLayout veja_agendaLayout = new javax.swing.GroupLayout(veja_agenda);
+        veja_agenda.setLayout(veja_agendaLayout);
+        veja_agendaLayout.setHorizontalGroup(
+            veja_agendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(veja_agendaLayout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addComponent(textoAgendinha)
+                .addContainerGap(562, Short.MAX_VALUE))
+        );
+        veja_agendaLayout.setVerticalGroup(
+            veja_agendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(veja_agendaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(textoAgendinha)
+                .addContainerGap(260, Short.MAX_VALUE))
+        );
+
+        menu.addTab("Veja sua Agenda", veja_agenda);
+
+        modifique_agenda.setBorder(javax.swing.BorderFactory.createTitledBorder("Você está modificando sua Agenda"));
+
+        jLabel9.setText("Novo nome da Agenda:");
+
+        jLabel10.setText("Novo nome do Dono:");
+
+        jLabel11.setText("Novo tipo:");
+
+        novoDonoModificado.setText("novo dono");
+
+        novoTipoModificado.setText("novo tipo");
+
+        novaAgendaModificada.setText("nova agenda");
+
+        confirmModifyAgenda.setText("Confirmar");
+        confirmModifyAgenda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                confirmModifyAgendaActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout modifique_agendaLayout = new javax.swing.GroupLayout(modifique_agenda);
+        modifique_agenda.setLayout(modifique_agendaLayout);
+        modifique_agendaLayout.setHorizontalGroup(
+            modifique_agendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(modifique_agendaLayout.createSequentialGroup()
+                .addGroup(modifique_agendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(modifique_agendaLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(modifique_agendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel10)
+                            .addComponent(jLabel11)
+                            .addGroup(modifique_agendaLayout.createSequentialGroup()
+                                .addGap(12, 12, 12)
+                                .addGroup(modifique_agendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(novoTipoModificado, javax.swing.GroupLayout.PREFERRED_SIZE, 429, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(novaAgendaModificada, javax.swing.GroupLayout.PREFERRED_SIZE, 429, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(novoDonoModificado, javax.swing.GroupLayout.PREFERRED_SIZE, 429, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(modifique_agendaLayout.createSequentialGroup()
+                        .addGap(265, 265, 265)
+                        .addComponent(confirmModifyAgenda)))
+                .addContainerGap(208, Short.MAX_VALUE))
+        );
+        modifique_agendaLayout.setVerticalGroup(
+            modifique_agendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(modifique_agendaLayout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(jLabel9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(novaAgendaModificada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(25, 25, 25)
+                .addComponent(jLabel10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(novoDonoModificado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addComponent(jLabel11)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(novoTipoModificado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addComponent(confirmModifyAgenda)
+                .addGap(28, 28, 28))
+        );
+
+        menu.addTab("Modifique sua Agenda", modifique_agenda);
+
         adicione_lembrete.setBorder(javax.swing.BorderFactory.createTitledBorder("Você está adicionando um Lembrete"));
 
         jLabel4.setText("Escreva o Lembrete:");
@@ -388,7 +482,7 @@ public class MasterPage extends javax.swing.JFrame {
 
         menu.addTab("Modifique um Lembrete", modifique_lembrete);
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Você está procurando através de uma descrição"));
+        veja_lembrete.setBorder(javax.swing.BorderFactory.createTitledBorder("Você está procurando através de uma descrição"));
 
         jLabel12.setText("Digite a descrição a ser buscada:");
 
@@ -405,142 +499,49 @@ public class MasterPage extends javax.swing.JFrame {
 
         jLabel13.setText("Lembrete: ");
 
-        lembrete_encontrado.setText("jLabel14");
         lembrete_encontrado.setVisible(false);
+        jScrollPane5.setViewportView(lembrete_encontrado);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout veja_lembreteLayout = new javax.swing.GroupLayout(veja_lembrete);
+        veja_lembrete.setLayout(veja_lembreteLayout);
+        veja_lembreteLayout.setHorizontalGroup(
+            veja_lembreteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(veja_lembreteLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addComponent(search_lembrete))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel12)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(47, 47, 47)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lembrete_encontrado)
-                            .addComponent(jLabel13))))
-                .addContainerGap(249, Short.MAX_VALUE))
+                .addGroup(veja_lembreteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(veja_lembreteLayout.createSequentialGroup()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(52, 52, 52))
+                    .addGroup(veja_lembreteLayout.createSequentialGroup()
+                        .addGroup(veja_lembreteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(veja_lembreteLayout.createSequentialGroup()
+                                .addGap(21, 21, 21)
+                                .addComponent(search_lembrete))
+                            .addGroup(veja_lembreteLayout.createSequentialGroup()
+                                .addComponent(jLabel12)
+                                .addGap(87, 87, 87)
+                                .addComponent(jLabel13)))
+                        .addContainerGap(249, Short.MAX_VALUE))))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        veja_lembreteLayout.setVerticalGroup(
+            veja_lembreteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(veja_lembreteLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(veja_lembreteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12)
                     .addComponent(jLabel13))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(lembrete_encontrado)
-                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(18, 18, 18)
+                .addGroup(veja_lembreteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane5)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE))
+                .addGap(55, 55, 55)
                 .addComponent(search_lembrete)
                 .addGap(37, 37, 37))
         );
 
-        menu.addTab("Veja um Lembrete", jPanel1);
-
-        veja_agenda.setBorder(javax.swing.BorderFactory.createTitledBorder("Você está vendo sua Agenda"));
-        veja_agenda.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                veja_agendaFocusGained(evt);
-            }
-        });
-
-        textoAgendinha.setText("jLabel12");
-
-        javax.swing.GroupLayout veja_agendaLayout = new javax.swing.GroupLayout(veja_agenda);
-        veja_agenda.setLayout(veja_agendaLayout);
-        veja_agendaLayout.setHorizontalGroup(
-            veja_agendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(veja_agendaLayout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addComponent(textoAgendinha)
-                .addContainerGap(562, Short.MAX_VALUE))
-        );
-        veja_agendaLayout.setVerticalGroup(
-            veja_agendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(veja_agendaLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(textoAgendinha)
-                .addContainerGap(258, Short.MAX_VALUE))
-        );
-
-        menu.addTab("Veja sua Agenda", veja_agenda);
-
-        modifique_agenda.setBorder(javax.swing.BorderFactory.createTitledBorder("Você está modificando sua Agenda"));
-
-        jLabel9.setText("Novo nome da Agenda:");
-
-        jLabel10.setText("Novo nome do Dono:");
-
-        jLabel11.setText("Novo tipo:");
-
-        novoDonoModificado.setText("novo dono");
-
-        novoTipoModificado.setText("novo tipo");
-
-        novaAgendaModificada.setText("nova agenda");
-
-        confirmModifyAgenda.setText("Confirmar");
-        confirmModifyAgenda.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                confirmModifyAgendaActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout modifique_agendaLayout = new javax.swing.GroupLayout(modifique_agenda);
-        modifique_agenda.setLayout(modifique_agendaLayout);
-        modifique_agendaLayout.setHorizontalGroup(
-            modifique_agendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(modifique_agendaLayout.createSequentialGroup()
-                .addGroup(modifique_agendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(modifique_agendaLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(modifique_agendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel10)
-                            .addComponent(jLabel11)
-                            .addGroup(modifique_agendaLayout.createSequentialGroup()
-                                .addGap(12, 12, 12)
-                                .addGroup(modifique_agendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(novoTipoModificado, javax.swing.GroupLayout.PREFERRED_SIZE, 429, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(novaAgendaModificada, javax.swing.GroupLayout.PREFERRED_SIZE, 429, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(novoDonoModificado, javax.swing.GroupLayout.PREFERRED_SIZE, 429, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addGroup(modifique_agendaLayout.createSequentialGroup()
-                        .addGap(265, 265, 265)
-                        .addComponent(confirmModifyAgenda)))
-                .addContainerGap(208, Short.MAX_VALUE))
-        );
-        modifique_agendaLayout.setVerticalGroup(
-            modifique_agendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(modifique_agendaLayout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(jLabel9)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(novaAgendaModificada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(25, 25, 25)
-                .addComponent(jLabel10)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(novoDonoModificado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addComponent(jLabel11)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(novoTipoModificado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
-                .addComponent(confirmModifyAgenda)
-                .addGap(28, 28, 28))
-        );
-
-        menu.addTab("Modifique sua Agenda", modifique_agenda);
+        menu.addTab("Veja um Lembrete", veja_lembrete);
 
         exclua_lembretes.setBorder(javax.swing.BorderFactory.createTitledBorder("Você está excluindo Lembrete"));
 
@@ -622,7 +623,7 @@ public class MasterPage extends javax.swing.JFrame {
                 .addGroup(exclua_lembretesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(excluir_lembrete)
                     .addComponent(excluir_buscar_lembrete))
-                .addContainerGap(78, Short.MAX_VALUE))
+                .addContainerGap(80, Short.MAX_VALUE))
         );
 
         menu.addTab("Exclua Lembretes", exclua_lembretes);
@@ -652,7 +653,7 @@ public class MasterPage extends javax.swing.JFrame {
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(menu, javax.swing.GroupLayout.DEFAULT_SIZE, 352, Short.MAX_VALUE)))
+                    .addComponent(menu, javax.swing.GroupLayout.PREFERRED_SIZE, 352, Short.MAX_VALUE)))
         );
 
         pack();
@@ -682,6 +683,7 @@ public class MasterPage extends javax.swing.JFrame {
     private void search_lembreteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_search_lembreteMouseClicked
         // TODO add your handling code here:
         lembrete = ctrlAgenda.buscaDeLembrete(agendinha, descricao_search.getText());
+        lembrete_encontrado.setContentType("text/html");
         lembrete_encontrado.setText(ctrlLembrete.readLembrete(lembrete));
         lembrete_encontrado.setVisible(true);        
     }//GEN-LAST:event_search_lembreteMouseClicked
@@ -824,11 +826,11 @@ public class MasterPage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JLabel lembrete_encontrado;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JEditorPane lembrete_encontrado;
     private javax.swing.JTabbedPane menu;
     private javax.swing.JButton modificar_busca_lembrete;
     private javax.swing.JPanel modifique_agenda;
@@ -845,6 +847,7 @@ public class MasterPage extends javax.swing.JFrame {
     private javax.swing.JLabel textoAgendinha;
     private javax.swing.JTextField tipoForm;
     private javax.swing.JPanel veja_agenda;
+    private javax.swing.JPanel veja_lembrete;
     // End of variables declaration//GEN-END:variables
 
 }

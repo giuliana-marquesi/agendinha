@@ -21,7 +21,7 @@ public class LembreteController {
     public String readLembrete(Lembrete lembrete) {
         String data = lembrete.getData().toInstant().toString();
         String descricao = lembrete.getDescricao();
-        return "Data: " + data + "\r\nDescrição: " + descricao;
+        return "<p>Data: " + data + "<p>Descrição: " + descricao;
     }
 
     public boolean updateLembrete(Lembrete lembrete, Date data, String descricao) {        
