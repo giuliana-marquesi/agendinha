@@ -14,7 +14,7 @@ import JavaMVCViews.*;
  *
  * @author AfzaalAhmad
  */
-public class JavaHelloCollections {
+public class MainClass {
 
     /**
      * @param args the command line arguments
@@ -24,6 +24,7 @@ public class JavaHelloCollections {
     public static void main(String[] args) {
         
         inicia.startApplication();
+        
         
         // TODO code application logic here
         //HelloWorldController controller = new HelloWorldController();

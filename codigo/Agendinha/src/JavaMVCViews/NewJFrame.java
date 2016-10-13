@@ -16,6 +16,8 @@ import JavaMVCModels.*;
 public class NewJFrame extends javax.swing.JFrame {
     
     private ControllerStringToModel controller = new ControllerStringToModel();
+    private AgendaController ctrlAgenda = new AgendaController();
+    
     /**
      * Creates new form NewJFrame
      */
@@ -32,9 +34,14 @@ public class NewJFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        confimacaoAgendaNova = new javax.swing.JPopupMenu();
-        jPanel3 = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
+        confirmaAgenda = new javax.swing.JDialog();
+        jLabel4 = new javax.swing.JLabel();
+        Home = new javax.swing.JPanel();
+        quero_criar = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        Crie_Agenda = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         nomeAgendaForm = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -43,27 +50,82 @@ public class NewJFrame extends javax.swing.JFrame {
         tipoForm = new javax.swing.JTextField();
         confirma = new javax.swing.JButton();
 
-        confimacaoAgendaNova.setToolTipText("");
-        confimacaoAgendaNova.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                visible(evt);
-            }
-        });
+        confirmaAgenda.setTitle("AgendaConfirmada");
+        confirmaAgenda.setAlwaysOnTop(true);
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+        jLabel4.setText("jLabel4");
+
+        javax.swing.GroupLayout confirmaAgendaLayout = new javax.swing.GroupLayout(confirmaAgenda.getContentPane());
+        confirmaAgenda.getContentPane().setLayout(confirmaAgendaLayout);
+        confirmaAgendaLayout.setHorizontalGroup(
+            confirmaAgendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(confirmaAgendaLayout.createSequentialGroup()
+                .addGap(99, 99, 99)
+                .addComponent(jLabel4)
+                .addContainerGap(250, Short.MAX_VALUE))
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+        confirmaAgendaLayout.setVerticalGroup(
+            confirmaAgendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(confirmaAgendaLayout.createSequentialGroup()
+                .addGap(64, 64, 64)
+                .addComponent(jLabel4)
+                .addContainerGap(221, Short.MAX_VALUE))
         );
+
+        confirmaAgenda.getAccessibleContext().setAccessibleParent(confirma);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Criar Agenda"));
+        quero_criar.setText("Quero criar!");
+        quero_criar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                quero_criarActionPerformed(evt);
+            }
+        });
+
+        jLabel8.setText("Crie sua primeira agenda para explorar suas funcionalidades.");
+
+        jLabel7.setText("Seu agrupador de agendas e lembretes!");
+
+        jLabel5.setText("Benvindo ao NotMemmento!");
+
+        javax.swing.GroupLayout HomeLayout = new javax.swing.GroupLayout(Home);
+        Home.setLayout(HomeLayout);
+        HomeLayout.setHorizontalGroup(
+            HomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(HomeLayout.createSequentialGroup()
+                .addGap(229, 229, 229)
+                .addComponent(quero_criar)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, HomeLayout.createSequentialGroup()
+                .addContainerGap(79, Short.MAX_VALUE)
+                .addGroup(HomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, HomeLayout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addGap(190, 190, 190))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, HomeLayout.createSequentialGroup()
+                        .addComponent(jLabel7)
+                        .addGap(149, 149, 149))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, HomeLayout.createSequentialGroup()
+                        .addComponent(jLabel8)
+                        .addGap(73, 73, 73))))
+        );
+        HomeLayout.setVerticalGroup(
+            HomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, HomeLayout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addComponent(jLabel5)
+                .addGap(29, 29, 29)
+                .addComponent(jLabel7)
+                .addGap(47, 47, 47)
+                .addComponent(jLabel8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 95, Short.MAX_VALUE)
+                .addComponent(quero_criar)
+                .addGap(59, 59, 59))
+        );
+
+        Crie_Agenda.setBorder(javax.swing.BorderFactory.createTitledBorder("Criar Agenda"));
+        Crie_Agenda.setVisible(false);
 
         jLabel1.setText("Nome da Agenda:");
 
@@ -91,87 +153,101 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(tipoForm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addGap(4, 4, 4)
-                                .addComponent(nomeAgendaForm, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout Crie_AgendaLayout = new javax.swing.GroupLayout(Crie_Agenda);
+        Crie_Agenda.setLayout(Crie_AgendaLayout);
+        Crie_AgendaLayout.setHorizontalGroup(
+            Crie_AgendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Crie_AgendaLayout.createSequentialGroup()
+                .addGroup(Crie_AgendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Crie_AgendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(Crie_AgendaLayout.createSequentialGroup()
+                            .addContainerGap()
+                            .addGroup(Crie_AgendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jLabel3)
                                 .addComponent(jLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(nomeDonoForm)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 121, Short.MAX_VALUE)
-                        .addComponent(confirma)
-                        .addGap(90, 90, 90))))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(nomeAgendaForm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(nomeDonoForm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(1, 1, 1)
+                                .addComponent(tipoForm)
+                                .addComponent(nomeDonoForm, javax.swing.GroupLayout.DEFAULT_SIZE, 428, Short.MAX_VALUE)))
+                        .addGroup(Crie_AgendaLayout.createSequentialGroup()
+                            .addContainerGap()
+                            .addComponent(jLabel1))
+                        .addGroup(Crie_AgendaLayout.createSequentialGroup()
+                            .addContainerGap()
+                            .addComponent(nomeAgendaForm)))
+                    .addGroup(Crie_AgendaLayout.createSequentialGroup()
+                        .addGap(233, 233, 233)
                         .addComponent(confirma)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(tipoForm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(59, Short.MAX_VALUE))
+                .addContainerGap(141, Short.MAX_VALUE))
+        );
+        Crie_AgendaLayout.setVerticalGroup(
+            Crie_AgendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Crie_AgendaLayout.createSequentialGroup()
+                .addGap(42, 42, 42)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addComponent(nomeAgendaForm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel2)
+                .addGap(18, 18, 18)
+                .addComponent(nomeDonoForm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(tipoForm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(51, 51, 51)
+                .addComponent(confirma)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Home, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(Crie_Agenda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap()))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(320, Short.MAX_VALUE))
+                .addComponent(Home, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 16, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(Crie_Agenda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap()))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void nomeAgendaFormActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomeAgendaFormActionPerformed
-        // TODO add your handling code here:
-       
-    }//GEN-LAST:event_nomeAgendaFormActionPerformed
-
     private void confirmaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmaActionPerformed
         // TODO add your handling code here:
-         String nomeAgenda = nomeAgendaForm.getText();
-         String nomeDono = nomeDonoForm.getText();
-         String tipo = tipoForm.getText();
-         controller.incluiAgenda(nomeAgenda, nomeDono, tipo);
+        String nomeAgenda = nomeAgendaForm.getText();
+        String nomeDono = nomeDonoForm.getText();
+        String tipo = tipoForm.getText();
+        Agenda agendinha = controller.includesAgenda(nomeAgenda, nomeDono, tipo);
+        Crie_Agenda.setVisible(false);
+        
+        System.out.println(ctrlAgenda.readAgenda(agendinha));
     }//GEN-LAST:event_confirmaActionPerformed
 
-    private void visible(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_visible
+    private void nomeAgendaFormActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomeAgendaFormActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_visible
+    }//GEN-LAST:event_nomeAgendaFormActionPerformed
+
+    private void quero_criarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quero_criarActionPerformed
+        // TODO add your handling code here:
+        Crie_Agenda.setVisible(true);
+        Home.setVisible(false);
+        
+    }//GEN-LAST:event_quero_criarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -207,17 +283,22 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         });
     }
-
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPopupMenu confimacaoAgendaNova;
+    private javax.swing.JPanel Crie_Agenda;
+    private javax.swing.JPanel Home;
     private javax.swing.JButton confirma;
+    private javax.swing.JDialog confirmaAgenda;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JTextField nomeAgendaForm;
     private javax.swing.JTextField nomeDonoForm;
+    private javax.swing.JButton quero_criar;
     private javax.swing.JTextField tipoForm;
     // End of variables declaration//GEN-END:variables
 

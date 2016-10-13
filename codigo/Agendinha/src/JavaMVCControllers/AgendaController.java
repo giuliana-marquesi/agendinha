@@ -40,17 +40,6 @@ public class AgendaController {
         //aqui só precisa fazer o update dos atributos da agenda
     };    
     
-    //Controller Dono
-        public void adicionaAgenda(String nome, String dono, String tipo) {
-            Agenda novoAgenda = new Agenda(nome, dono, tipo);
-            //Agenda novaAgenda = ctrlAgenda.createAgenda(nome, dono, tipo);
-            //agendas.addAgenda(novaAgenda);            
-        };
-
-        public void deleteAgenda() {
-            
-        };
-    
     public void adicionaLembrete(Agenda agendinha, Date data, String Descricao) {
         Lembrete novoLembrete = ctrlLembrete.createLembrete(data, Descricao);
         agendinha.addLembrete(novoLembrete);
@@ -58,13 +47,10 @@ public class AgendaController {
     };
     
     public void deleteAllLembretes(Agenda agendinha) {
-        //usar getLembretes pra zerar o arraylist
         agendinha.getLembretes().clear();
     };
     
     public void deleteLembrete(Agenda agendinha, Lembrete lembrete) {
-        agendinha.getLembretes().remove(lembrete);
-        //como dar 'free' numa instancia?
-        //Se um objeto é instanciado num metódo morre junto com o método?       
+        agendinha.getLembretes().remove(lembrete);    
     };
 }

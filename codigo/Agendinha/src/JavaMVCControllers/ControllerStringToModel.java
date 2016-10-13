@@ -28,8 +28,18 @@ public class ControllerStringToModel {
         view.setVisible(true);
     }
     
-    public void incluiAgenda(String nomeAgenda, String nomeDono, String tipo){
+    public Agenda includesAgenda(String nomeAgenda, String nomeDono, String tipo){
         Agenda novaAgenda = ctrlAgenda.createAgenda(nomeAgenda,nomeDono ,tipo);
         grupoAgendas.add(novaAgenda);
+        return novaAgenda;
     }
+    
+    public void deleteAgenda(Agenda agendinha) {
+        grupoAgendas.remove(agendinha);
+    };
+    
+     public void deleteAllLembretes(Agenda agendinha) {
+        grupoAgendas.clear();
+    };
+ 
 }
