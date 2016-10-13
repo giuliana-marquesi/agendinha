@@ -697,8 +697,8 @@ public class MasterPage extends javax.swing.JFrame {
 
     private void veja_agendaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_veja_agendaFocusGained
         // TODO add your handling code here:
-        String data = ctrlAgenda.readAgenda(agendinha);
-        textoAgendinha.setText(data);
+        String textAgenda = ctrlAgenda.readAgenda(agendinha);
+        textoAgendinha.setText(textAgenda);
         textoAgendinha.setVisible(true);
     }//GEN-LAST:event_veja_agendaFocusGained
 

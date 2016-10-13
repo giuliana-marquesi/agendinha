@@ -22,9 +22,9 @@ public class AgendaController {
     };
     
     public String readAgenda(Agenda agendinha) {
-        String mensagem = agendinha.getNome() + " " + agendinha.getDono() + " " + agendinha.getTipo() + "\n";
+        String mensagem = "Agenda: " + agendinha.getNome() + " Dono: " + agendinha.getDono() + " Tipo: " + agendinha.getTipo() + "\r\n";
         for(Lembrete lembrete : agendinha.getLembretes()) {
-            mensagem += ctrlLembrete.readLembrete(lembrete) + "\n ";
+            mensagem += ctrlLembrete.readLembrete(lembrete) + "\r\n";
         }
         return mensagem;
     };

@@ -5,6 +5,7 @@
  */
 package JavaMVCControllers;
 import java.util.Date;
+import java.util.Calendar;
 import JavaMVCViews.*;
 import JavaMVCModels.*;
 /**
@@ -18,9 +19,9 @@ public class LembreteController {
     }
     
     public String readLembrete(Lembrete lembrete) {
-        String data = lembrete.getData().toString();
+        String data = lembrete.getData().toInstant().toString();
         String descricao = lembrete.getDescricao();
-        return data + " " + descricao;
+        return "Data: " + data + "\r\nDescrição: " + descricao;
     }
 
     public boolean updateLembrete(Lembrete lembrete, Date data, String descricao) {        
