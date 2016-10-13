@@ -14,15 +14,18 @@ import java.util.Date;
  *
  * @author gigik_user
  */
-public class NewJFrame extends javax.swing.JFrame {
+public class MasterPage extends javax.swing.JFrame {
     
     private AgendaController ctrlAgenda = new AgendaController();
+    private LembreteController ctrlLembrete = new LembreteController();
     private Agenda agendinha;
-    
+    private Lembrete lembrete;
+    private Lembrete lembrete_modificado;
+    private Lembrete lembrete_excluir;
     /**
      * Creates new form NewJFrame
      */
-    public NewJFrame() {
+    public MasterPage() {
         initComponents();
     }
 
@@ -56,7 +59,22 @@ public class NewJFrame extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         confirmAddLembrete = new javax.swing.JButton();
         modifique_lembrete = new javax.swing.JPanel();
-        veja_lembrete = new javax.swing.JPanel();
+        jLabel14 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        nova_descricao = new javax.swing.JTextArea();
+        editar_lembrete = new javax.swing.JButton();
+        jLabel15 = new javax.swing.JLabel();
+        buscar_palavra = new javax.swing.JTextField();
+        modificar_busca_lembrete = new javax.swing.JButton();
+        jLabel16 = new javax.swing.JLabel();
+        resultado_modifique_lembrete = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel12 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        descricao_search = new javax.swing.JTextArea();
+        search_lembrete = new javax.swing.JButton();
+        jLabel13 = new javax.swing.JLabel();
+        lembrete_encontrado = new javax.swing.JLabel();
         veja_agenda = new javax.swing.JPanel();
         textoAgendinha = new javax.swing.JLabel();
         modifique_agenda = new javax.swing.JPanel();
@@ -68,7 +86,14 @@ public class NewJFrame extends javax.swing.JFrame {
         novaAgendaModificada = new javax.swing.JTextField();
         confirmModifyAgenda = new javax.swing.JButton();
         exclua_lembretes = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        excluir_todos = new javax.swing.JButton();
+        excluir_lembrete = new javax.swing.JButton();
+        excluir_resultado_lembrete = new javax.swing.JLabel();
+        excluir_buscar_descricao = new javax.swing.JTextField();
+        jLabel20 = new javax.swing.JLabel();
+        excluir_buscar_lembrete = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -221,7 +246,7 @@ public class NewJFrame extends javax.swing.JFrame {
                     .addGroup(adicione_lembreteLayout.createSequentialGroup()
                         .addGap(267, 267, 267)
                         .addComponent(confirmAddLembrete)))
-                .addContainerGap(86, Short.MAX_VALUE))
+                .addContainerGap(130, Short.MAX_VALUE))
         );
         adicione_lembreteLayout.setVerticalGroup(
             adicione_lembreteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -241,33 +266,148 @@ public class NewJFrame extends javax.swing.JFrame {
 
         modifique_lembrete.setBorder(javax.swing.BorderFactory.createTitledBorder("Você está modificando um Lembrete"));
 
+        jLabel14.setText("Nova Descrição: ");
+
+        nova_descricao.setColumns(20);
+        nova_descricao.setRows(5);
+        jScrollPane3.setViewportView(nova_descricao);
+
+        editar_lembrete.setText("Confirmar");
+        editar_lembrete.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                editar_lembreteMouseClicked(evt);
+            }
+        });
+
+        jLabel15.setText("Digite a descrição a ser buscada: ");
+
+        buscar_palavra.setText("Descrição");
+
+        modificar_busca_lembrete.setText("Buscar");
+        modificar_busca_lembrete.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                modificar_busca_lembreteMouseClicked(evt);
+            }
+        });
+
+        jLabel16.setText("Este será o lembrete modificado:");
+
+        resultado_modifique_lembrete.setText("jLabel17");
+        resultado_modifique_lembrete.setVisible(false);
+
         javax.swing.GroupLayout modifique_lembreteLayout = new javax.swing.GroupLayout(modifique_lembrete);
         modifique_lembrete.setLayout(modifique_lembreteLayout);
         modifique_lembreteLayout.setHorizontalGroup(
             modifique_lembreteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 661, Short.MAX_VALUE)
+            .addGroup(modifique_lembreteLayout.createSequentialGroup()
+                .addGroup(modifique_lembreteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(modifique_lembreteLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel14))
+                    .addGroup(modifique_lembreteLayout.createSequentialGroup()
+                        .addGap(57, 57, 57)
+                        .addComponent(editar_lembrete))
+                    .addGroup(modifique_lembreteLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 503, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(modifique_lembreteLayout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addComponent(modificar_busca_lembrete))
+                    .addGroup(modifique_lembreteLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(modifique_lembreteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(buscar_palavra, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel15, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(59, 59, 59)
+                        .addGroup(modifique_lembreteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel16)
+                            .addComponent(resultado_modifique_lembrete))))
+                .addContainerGap(160, Short.MAX_VALUE))
         );
         modifique_lembreteLayout.setVerticalGroup(
             modifique_lembreteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(modifique_lembreteLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(modifique_lembreteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(modifique_lembreteLayout.createSequentialGroup()
+                        .addGroup(modifique_lembreteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel15)
+                            .addComponent(jLabel16))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(buscar_palavra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(resultado_modifique_lembrete))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
+                .addComponent(modificar_busca_lembrete)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel14)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(editar_lembrete)
+                .addContainerGap())
         );
 
         menu.addTab("Modifique um Lembrete", modifique_lembrete);
 
-        veja_lembrete.setBorder(javax.swing.BorderFactory.createTitledBorder("Você está vendo um Lembrete"));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Você está procurando através de uma descrição"));
 
-        javax.swing.GroupLayout veja_lembreteLayout = new javax.swing.GroupLayout(veja_lembrete);
-        veja_lembrete.setLayout(veja_lembreteLayout);
-        veja_lembreteLayout.setHorizontalGroup(
-            veja_lembreteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 661, Short.MAX_VALUE)
+        jLabel12.setText("Digite a descrição a ser buscada:");
+
+        descricao_search.setColumns(20);
+        descricao_search.setRows(5);
+        jScrollPane2.setViewportView(descricao_search);
+
+        search_lembrete.setText("Buscar");
+        search_lembrete.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                search_lembreteMouseClicked(evt);
+            }
+        });
+
+        jLabel13.setText("Lembrete: ");
+
+        lembrete_encontrado.setText("jLabel14");
+        lembrete_encontrado.setVisible(false);
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addComponent(search_lembrete))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel12)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(47, 47, 47)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lembrete_encontrado)
+                            .addComponent(jLabel13))))
+                .addContainerGap(293, Short.MAX_VALUE))
         );
-        veja_lembreteLayout.setVerticalGroup(
-            veja_lembreteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel12)
+                    .addComponent(jLabel13))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(lembrete_encontrado)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(18, 18, 18)
+                .addComponent(search_lembrete)
+                .addGap(37, 37, 37))
         );
 
-        menu.addTab("Veja um Lembrete", veja_lembrete);
+        menu.addTab("Veja um Lembrete", jPanel1);
 
         veja_agenda.setBorder(javax.swing.BorderFactory.createTitledBorder("Você está vendo sua Agenda"));
         veja_agenda.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -285,14 +425,14 @@ public class NewJFrame extends javax.swing.JFrame {
             .addGroup(veja_agendaLayout.createSequentialGroup()
                 .addGap(40, 40, 40)
                 .addComponent(textoAgendinha)
-                .addContainerGap(562, Short.MAX_VALUE))
+                .addContainerGap(606, Short.MAX_VALUE))
         );
         veja_agendaLayout.setVerticalGroup(
             veja_agendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(veja_agendaLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(textoAgendinha)
-                .addContainerGap(278, Short.MAX_VALUE))
+                .addContainerGap(260, Short.MAX_VALUE))
         );
 
         menu.addTab("Veja sua Agenda", veja_agenda);
@@ -339,7 +479,7 @@ public class NewJFrame extends javax.swing.JFrame {
                     .addGroup(modifique_agendaLayout.createSequentialGroup()
                         .addGap(265, 265, 265)
                         .addComponent(confirmModifyAgenda)))
-                .addContainerGap(208, Short.MAX_VALUE))
+                .addContainerGap(252, Short.MAX_VALUE))
         );
         modifique_agendaLayout.setVerticalGroup(
             modifique_agendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -356,7 +496,7 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addComponent(jLabel11)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(novoTipoModificado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addComponent(confirmModifyAgenda)
                 .addGap(28, 28, 28))
         );
@@ -365,33 +505,88 @@ public class NewJFrame extends javax.swing.JFrame {
 
         exclua_lembretes.setBorder(javax.swing.BorderFactory.createTitledBorder("Você está excluindo Lembrete"));
 
+        jLabel17.setText("Exclua Todos");
+
+        jLabel18.setText("Exclua o lembrete:");
+
+        excluir_todos.setText("Confirmar");
+        excluir_todos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                excluir_todosActionPerformed(evt);
+            }
+        });
+
+        excluir_lembrete.setText("Excluir");
+        excluir_lembrete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                excluir_lembreteActionPerformed(evt);
+            }
+        });
+
+        excluir_resultado_lembrete.setText("jLabel19");
+        excluir_resultado_lembrete.setVisible(false);
+
+        excluir_buscar_descricao.setText("Descrição");
+
+        jLabel20.setText("Digite a descrição a ser buscada:");
+
+        excluir_buscar_lembrete.setText("Buscar");
+        excluir_buscar_lembrete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                excluir_buscar_lembreteActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout exclua_lembretesLayout = new javax.swing.GroupLayout(exclua_lembretes);
         exclua_lembretes.setLayout(exclua_lembretesLayout);
         exclua_lembretesLayout.setHorizontalGroup(
             exclua_lembretesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 661, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, exclua_lembretesLayout.createSequentialGroup()
+                .addGap(42, 42, 42)
+                .addComponent(excluir_buscar_lembrete)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(excluir_lembrete)
+                .addGap(183, 183, 183))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, exclua_lembretesLayout.createSequentialGroup()
+                .addGroup(exclua_lembretesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(exclua_lembretesLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel17))
+                    .addGroup(exclua_lembretesLayout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addGroup(exclua_lembretesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(excluir_todos)
+                            .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(excluir_buscar_descricao))))
+                .addGap(163, 163, 163)
+                .addGroup(exclua_lembretesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel18)
+                    .addComponent(excluir_resultado_lembrete))
+                .addContainerGap(147, Short.MAX_VALUE))
         );
         exclua_lembretesLayout.setVerticalGroup(
             exclua_lembretesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(exclua_lembretesLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(jLabel17)
+                .addGap(18, 18, 18)
+                .addComponent(excluir_todos)
+                .addGap(29, 29, 29)
+                .addGroup(exclua_lembretesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel18)
+                    .addComponent(jLabel20))
+                .addGap(18, 18, 18)
+                .addGroup(exclua_lembretesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(excluir_resultado_lembrete)
+                    .addComponent(excluir_buscar_descricao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20)
+                .addGroup(exclua_lembretesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(excluir_lembrete)
+                    .addComponent(excluir_buscar_lembrete))
+                .addContainerGap(80, Short.MAX_VALUE))
         );
 
         menu.addTab("Exclua Lembretes", exclua_lembretes);
-
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Você está procurando através de uma palavra"));
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 661, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 305, Short.MAX_VALUE)
-        );
-
-        menu.addTab("Procure Lembretes", jPanel1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -418,7 +613,7 @@ public class NewJFrame extends javax.swing.JFrame {
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(menu, javax.swing.GroupLayout.DEFAULT_SIZE, 352, Short.MAX_VALUE)))
+                    .addComponent(menu, javax.swing.GroupLayout.PREFERRED_SIZE, 352, Short.MAX_VALUE)))
         );
 
         pack();
@@ -446,10 +641,12 @@ public class NewJFrame extends javax.swing.JFrame {
         
     }//GEN-LAST:event_quero_criarActionPerformed
 
-    private void confirmAddLembreteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmAddLembreteActionPerformed
+    private void search_lembreteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_search_lembreteMouseClicked
         // TODO add your handling code here:
-        ctrlAgenda.adicionaLembrete(agendinha, new Date(), descricao.getText());
-    }//GEN-LAST:event_confirmAddLembreteActionPerformed
+        lembrete = ctrlAgenda.buscaDeLembrete(agendinha, descricao_search.getText());
+        lembrete_encontrado.setText(ctrlLembrete.readLembrete(lembrete));
+        lembrete_encontrado.setVisible(true);
+    }//GEN-LAST:event_search_lembreteMouseClicked
 
     private void confirmModifyAgendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmModifyAgendaActionPerformed
         // TODO add your handling code here:
@@ -462,6 +659,40 @@ public class NewJFrame extends javax.swing.JFrame {
         textoAgendinha.setText(data);
         textoAgendinha.setVisible(true);
     }//GEN-LAST:event_veja_agendaFocusGained
+
+    private void confirmAddLembreteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmAddLembreteActionPerformed
+        // TODO add your handling code here:
+        ctrlAgenda.adicionaLembrete(agendinha, new Date(), descricao.getText());
+    }//GEN-LAST:event_confirmAddLembreteActionPerformed
+
+    private void editar_lembreteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editar_lembreteMouseClicked
+        // TODO add your handling code here:
+        ctrlLembrete.updateLembrete(lembrete_modificado, new Date(),nova_descricao.getText());
+    }//GEN-LAST:event_editar_lembreteMouseClicked
+
+    private void modificar_busca_lembreteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_modificar_busca_lembreteMouseClicked
+        // TODO add your handling code here:
+        lembrete_modificado = ctrlAgenda.buscaDeLembrete(agendinha, buscar_palavra.getText());
+        resultado_modifique_lembrete.setText(ctrlLembrete.readLembrete(lembrete_modificado));
+        resultado_modifique_lembrete.setVisible(true);
+    }//GEN-LAST:event_modificar_busca_lembreteMouseClicked
+
+    private void excluir_buscar_lembreteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluir_buscar_lembreteActionPerformed
+        // TODO add your handling code here:
+        lembrete_excluir = ctrlAgenda.buscaDeLembrete(agendinha, excluir_buscar_descricao.getText());
+        excluir_resultado_lembrete.setText(ctrlLembrete.readLembrete(lembrete_excluir));
+        excluir_resultado_lembrete.setVisible(true);        
+    }//GEN-LAST:event_excluir_buscar_lembreteActionPerformed
+
+    private void excluir_lembreteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluir_lembreteActionPerformed
+        // TODO add your handling code here:
+        ctrlAgenda.deleteLembrete(agendinha, lembrete_excluir);
+    }//GEN-LAST:event_excluir_lembreteActionPerformed
+
+    private void excluir_todosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluir_todosActionPerformed
+        // TODO add your handling code here:
+        ctrlAgenda.deleteAllLembretes(agendinha);
+    }//GEN-LAST:event_excluir_todosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -480,37 +711,54 @@ public class NewJFrame extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MasterPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MasterPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MasterPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MasterPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new NewJFrame().setVisible(true);
+                new MasterPage().setVisible(true);
             }
         });
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel adicione_lembrete;
+    private javax.swing.JTextField buscar_palavra;
     private javax.swing.JButton confirmAddLembrete;
     private javax.swing.JButton confirmModifyAgenda;
     private javax.swing.JButton confirma;
     private javax.swing.JPanel crie_Agenda;
     private javax.swing.JTextArea descricao;
+    private javax.swing.JTextArea descricao_search;
+    private javax.swing.JButton editar_lembrete;
     private javax.swing.JPanel exclua_lembretes;
+    private javax.swing.JTextField excluir_buscar_descricao;
+    private javax.swing.JButton excluir_buscar_lembrete;
+    private javax.swing.JButton excluir_lembrete;
+    private javax.swing.JLabel excluir_resultado_lembrete;
+    private javax.swing.JButton excluir_todos;
     private javax.swing.JPanel home;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -520,19 +768,25 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JLabel lembrete_encontrado;
     private javax.swing.JTabbedPane menu;
+    private javax.swing.JButton modificar_busca_lembrete;
     private javax.swing.JPanel modifique_agenda;
     private javax.swing.JPanel modifique_lembrete;
     private javax.swing.JTextField nomeAgendaForm;
     private javax.swing.JTextField nomeDonoForm;
     private javax.swing.JTextField novaAgendaModificada;
+    private javax.swing.JTextArea nova_descricao;
     private javax.swing.JTextField novoDonoModificado;
     private javax.swing.JTextField novoTipoModificado;
     private javax.swing.JButton quero_criar;
+    private javax.swing.JLabel resultado_modifique_lembrete;
+    private javax.swing.JButton search_lembrete;
     private javax.swing.JLabel textoAgendinha;
     private javax.swing.JTextField tipoForm;
     private javax.swing.JPanel veja_agenda;
-    private javax.swing.JPanel veja_lembrete;
     // End of variables declaration//GEN-END:variables
 
 }

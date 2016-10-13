@@ -18,7 +18,7 @@ public class InitialController {
     
     public void startApplication() {
         // View the application's GUI
-        NewJFrame view = new NewJFrame();
+        MasterPage view = new MasterPage();
         view.setVisible(true);
     }
     

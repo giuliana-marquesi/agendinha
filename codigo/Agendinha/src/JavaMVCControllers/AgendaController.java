@@ -46,6 +46,17 @@ public class AgendaController {
         //criar lembrete e colocar no array
     };
     
+    public Lembrete buscaDeLembrete(Agenda agendinha, String descricao) {        
+        Lembrete outroLembrete = null;
+        for(Lembrete lembrete : agendinha.getLembretes()) {
+            String decLembrete = lembrete.getDescricao();
+            if(decLembrete.contains(descricao)) {        
+                outroLembrete = lembrete;                
+            } 
+        }
+        return outroLembrete;
+    }    
+    
     public void deleteAllLembretes(Agenda agendinha) {
         agendinha.getLembretes().clear();
     };
