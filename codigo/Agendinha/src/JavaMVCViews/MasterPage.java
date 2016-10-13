@@ -38,6 +38,9 @@ public class MasterPage extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        dialog_padrao = new javax.swing.JDialog();
+        jLabel19 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         home = new javax.swing.JPanel();
         quero_criar = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
@@ -94,6 +97,42 @@ public class MasterPage extends javax.swing.JFrame {
         excluir_buscar_descricao = new javax.swing.JTextField();
         jLabel20 = new javax.swing.JLabel();
         excluir_buscar_lembrete = new javax.swing.JButton();
+
+        dialog_padrao.setPreferredSize(new java.awt.Dimension(400, 313));
+        dialog_padrao.setResizable(false);
+        dialog_padrao.setSize(new java.awt.Dimension(300, 200));
+
+        jLabel19.setText("Sucesso!");
+
+        jButton1.setText("Confirmar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout dialog_padraoLayout = new javax.swing.GroupLayout(dialog_padrao.getContentPane());
+        dialog_padrao.getContentPane().setLayout(dialog_padraoLayout);
+        dialog_padraoLayout.setHorizontalGroup(
+            dialog_padraoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(dialog_padraoLayout.createSequentialGroup()
+                .addGap(95, 95, 95)
+                .addGroup(dialog_padraoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton1)
+                    .addGroup(dialog_padraoLayout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addComponent(jLabel19)))
+                .addContainerGap())
+        );
+        dialog_padraoLayout.setVerticalGroup(
+            dialog_padraoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(dialog_padraoLayout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addComponent(jLabel19)
+                .addGap(53, 53, 53)
+                .addComponent(jButton1)
+                .addContainerGap())
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -246,7 +285,7 @@ public class MasterPage extends javax.swing.JFrame {
                     .addGroup(adicione_lembreteLayout.createSequentialGroup()
                         .addGap(267, 267, 267)
                         .addComponent(confirmAddLembrete)))
-                .addContainerGap(130, Short.MAX_VALUE))
+                .addContainerGap(86, Short.MAX_VALUE))
         );
         adicione_lembreteLayout.setVerticalGroup(
             adicione_lembreteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -322,7 +361,7 @@ public class MasterPage extends javax.swing.JFrame {
                         .addGroup(modifique_lembreteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel16)
                             .addComponent(resultado_modifique_lembrete))))
-                .addContainerGap(160, Short.MAX_VALUE))
+                .addContainerGap(116, Short.MAX_VALUE))
         );
         modifique_lembreteLayout.setVerticalGroup(
             modifique_lembreteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -336,7 +375,7 @@ public class MasterPage extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(buscar_palavra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(resultado_modifique_lembrete))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(modificar_busca_lembrete)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel14)
@@ -387,7 +426,7 @@ public class MasterPage extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lembrete_encontrado)
                             .addComponent(jLabel13))))
-                .addContainerGap(293, Short.MAX_VALUE))
+                .addContainerGap(249, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -398,7 +437,7 @@ public class MasterPage extends javax.swing.JFrame {
                     .addComponent(jLabel13))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(lembrete_encontrado)
                         .addGap(0, 0, Short.MAX_VALUE)))
@@ -425,14 +464,14 @@ public class MasterPage extends javax.swing.JFrame {
             .addGroup(veja_agendaLayout.createSequentialGroup()
                 .addGap(40, 40, 40)
                 .addComponent(textoAgendinha)
-                .addContainerGap(606, Short.MAX_VALUE))
+                .addContainerGap(562, Short.MAX_VALUE))
         );
         veja_agendaLayout.setVerticalGroup(
             veja_agendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(veja_agendaLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(textoAgendinha)
-                .addContainerGap(260, Short.MAX_VALUE))
+                .addContainerGap(258, Short.MAX_VALUE))
         );
 
         menu.addTab("Veja sua Agenda", veja_agenda);
@@ -479,7 +518,7 @@ public class MasterPage extends javax.swing.JFrame {
                     .addGroup(modifique_agendaLayout.createSequentialGroup()
                         .addGap(265, 265, 265)
                         .addComponent(confirmModifyAgenda)))
-                .addContainerGap(252, Short.MAX_VALUE))
+                .addContainerGap(208, Short.MAX_VALUE))
         );
         modifique_agendaLayout.setVerticalGroup(
             modifique_agendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -496,7 +535,7 @@ public class MasterPage extends javax.swing.JFrame {
                 .addComponent(jLabel11)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(novoTipoModificado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                 .addComponent(confirmModifyAgenda)
                 .addGap(28, 28, 28))
         );
@@ -562,7 +601,7 @@ public class MasterPage extends javax.swing.JFrame {
                 .addGroup(exclua_lembretesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel18)
                     .addComponent(excluir_resultado_lembrete))
-                .addContainerGap(147, Short.MAX_VALUE))
+                .addContainerGap(103, Short.MAX_VALUE))
         );
         exclua_lembretesLayout.setVerticalGroup(
             exclua_lembretesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -583,7 +622,7 @@ public class MasterPage extends javax.swing.JFrame {
                 .addGroup(exclua_lembretesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(excluir_lembrete)
                     .addComponent(excluir_buscar_lembrete))
-                .addContainerGap(80, Short.MAX_VALUE))
+                .addContainerGap(78, Short.MAX_VALUE))
         );
 
         menu.addTab("Exclua Lembretes", exclua_lembretes);
@@ -613,7 +652,7 @@ public class MasterPage extends javax.swing.JFrame {
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(menu, javax.swing.GroupLayout.PREFERRED_SIZE, 352, Short.MAX_VALUE)))
+                    .addComponent(menu, javax.swing.GroupLayout.DEFAULT_SIZE, 352, Short.MAX_VALUE)))
         );
 
         pack();
@@ -637,20 +676,23 @@ public class MasterPage extends javax.swing.JFrame {
     private void quero_criarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quero_criarActionPerformed
         // TODO add your handling code here:
         crie_Agenda.setVisible(true);
-        home.setVisible(false);
-        
+        home.setVisible(false);        
     }//GEN-LAST:event_quero_criarActionPerformed
 
     private void search_lembreteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_search_lembreteMouseClicked
         // TODO add your handling code here:
         lembrete = ctrlAgenda.buscaDeLembrete(agendinha, descricao_search.getText());
         lembrete_encontrado.setText(ctrlLembrete.readLembrete(lembrete));
-        lembrete_encontrado.setVisible(true);
+        lembrete_encontrado.setVisible(true);        
     }//GEN-LAST:event_search_lembreteMouseClicked
 
     private void confirmModifyAgendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmModifyAgendaActionPerformed
         // TODO add your handling code here:
         ctrlAgenda.updateAgenda(agendinha, novaAgendaModificada.getText(), novoDonoModificado.getText(), novoTipoModificado.getText());
+        novaAgendaModificada.setText("");
+        novoDonoModificado.setText(""); 
+        novoTipoModificado.setText("");        
+        dialog_padrao.setVisible(true);
     }//GEN-LAST:event_confirmModifyAgendaActionPerformed
 
     private void veja_agendaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_veja_agendaFocusGained
@@ -663,36 +705,50 @@ public class MasterPage extends javax.swing.JFrame {
     private void confirmAddLembreteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmAddLembreteActionPerformed
         // TODO add your handling code here:
         ctrlAgenda.adicionaLembrete(agendinha, new Date(), descricao.getText());
+        descricao.setText("");
+        
+        
+        dialog_padrao.setVisible(true);
     }//GEN-LAST:event_confirmAddLembreteActionPerformed
 
     private void editar_lembreteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editar_lembreteMouseClicked
         // TODO add your handling code here:
         ctrlLembrete.updateLembrete(lembrete_modificado, new Date(),nova_descricao.getText());
+        nova_descricao.setText("");
+        dialog_padrao.setVisible(true);
     }//GEN-LAST:event_editar_lembreteMouseClicked
 
     private void modificar_busca_lembreteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_modificar_busca_lembreteMouseClicked
         // TODO add your handling code here:
         lembrete_modificado = ctrlAgenda.buscaDeLembrete(agendinha, buscar_palavra.getText());
         resultado_modifique_lembrete.setText(ctrlLembrete.readLembrete(lembrete_modificado));
-        resultado_modifique_lembrete.setVisible(true);
+        resultado_modifique_lembrete.setVisible(true);        
     }//GEN-LAST:event_modificar_busca_lembreteMouseClicked
 
     private void excluir_buscar_lembreteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluir_buscar_lembreteActionPerformed
         // TODO add your handling code here:
         lembrete_excluir = ctrlAgenda.buscaDeLembrete(agendinha, excluir_buscar_descricao.getText());
         excluir_resultado_lembrete.setText(ctrlLembrete.readLembrete(lembrete_excluir));
-        excluir_resultado_lembrete.setVisible(true);        
+        excluir_resultado_lembrete.setVisible(true);                
     }//GEN-LAST:event_excluir_buscar_lembreteActionPerformed
 
     private void excluir_lembreteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluir_lembreteActionPerformed
         // TODO add your handling code here:
         ctrlAgenda.deleteLembrete(agendinha, lembrete_excluir);
+        dialog_padrao.setVisible(true);
     }//GEN-LAST:event_excluir_lembreteActionPerformed
 
     private void excluir_todosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluir_todosActionPerformed
         // TODO add your handling code here:
         ctrlAgenda.deleteAllLembretes(agendinha);
+        dialog_padrao.setVisible(true);
+
     }//GEN-LAST:event_excluir_todosActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        dialog_padrao.setVisible(false);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -726,10 +782,9 @@ public class MasterPage extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new MasterPage().setVisible(true);
-            }
+            }            
         });
-    }
-    
+    }    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel adicione_lembrete;
     private javax.swing.JTextField buscar_palavra;
@@ -739,6 +794,7 @@ public class MasterPage extends javax.swing.JFrame {
     private javax.swing.JPanel crie_Agenda;
     private javax.swing.JTextArea descricao;
     private javax.swing.JTextArea descricao_search;
+    private javax.swing.JDialog dialog_padrao;
     private javax.swing.JButton editar_lembrete;
     private javax.swing.JPanel exclua_lembretes;
     private javax.swing.JTextField excluir_buscar_descricao;
@@ -747,6 +803,7 @@ public class MasterPage extends javax.swing.JFrame {
     private javax.swing.JLabel excluir_resultado_lembrete;
     private javax.swing.JButton excluir_todos;
     private javax.swing.JPanel home;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -757,6 +814,7 @@ public class MasterPage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
