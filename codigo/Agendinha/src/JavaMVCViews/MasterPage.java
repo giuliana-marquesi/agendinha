@@ -55,8 +55,6 @@ public class MasterPage extends javax.swing.JFrame {
         tipoForm = new javax.swing.JTextField();
         confirma = new javax.swing.JButton();
         menu = new javax.swing.JTabbedPane();
-        veja_agenda = new javax.swing.JPanel();
-        textoAgendinha = new javax.swing.JLabel();
         modifique_agenda = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -65,6 +63,8 @@ public class MasterPage extends javax.swing.JFrame {
         novoTipoModificado = new javax.swing.JTextField();
         novaAgendaModificada = new javax.swing.JTextField();
         confirmModifyAgenda = new javax.swing.JButton();
+        veja_agenda = new javax.swing.JPanel();
+        textoAgendinha = new javax.swing.JLabel();
         adicione_lembrete = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -253,34 +253,6 @@ public class MasterPage extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        veja_agenda.setBorder(javax.swing.BorderFactory.createTitledBorder("Você está vendo sua Agenda"));
-        veja_agenda.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                veja_agendaFocusGained(evt);
-            }
-        });
-
-        textoAgendinha.setText("jLabel12");
-
-        javax.swing.GroupLayout veja_agendaLayout = new javax.swing.GroupLayout(veja_agenda);
-        veja_agenda.setLayout(veja_agendaLayout);
-        veja_agendaLayout.setHorizontalGroup(
-            veja_agendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(veja_agendaLayout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addComponent(textoAgendinha)
-                .addContainerGap(562, Short.MAX_VALUE))
-        );
-        veja_agendaLayout.setVerticalGroup(
-            veja_agendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(veja_agendaLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(textoAgendinha)
-                .addContainerGap(260, Short.MAX_VALUE))
-        );
-
-        menu.addTab("Veja sua Agenda", veja_agenda);
-
         modifique_agenda.setBorder(javax.swing.BorderFactory.createTitledBorder("Você está modificando sua Agenda"));
 
         jLabel9.setText("Novo nome da Agenda:");
@@ -346,6 +318,34 @@ public class MasterPage extends javax.swing.JFrame {
         );
 
         menu.addTab("Modifique sua Agenda", modifique_agenda);
+
+        veja_agenda.setBorder(javax.swing.BorderFactory.createTitledBorder("Você está vendo sua Agenda"));
+        veja_agenda.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                veja_agendaFocusGained(evt);
+            }
+        });
+
+        textoAgendinha.setText("jLabel12");
+
+        javax.swing.GroupLayout veja_agendaLayout = new javax.swing.GroupLayout(veja_agenda);
+        veja_agenda.setLayout(veja_agendaLayout);
+        veja_agendaLayout.setHorizontalGroup(
+            veja_agendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(veja_agendaLayout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addComponent(textoAgendinha)
+                .addContainerGap(562, Short.MAX_VALUE))
+        );
+        veja_agendaLayout.setVerticalGroup(
+            veja_agendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(veja_agendaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(textoAgendinha)
+                .addContainerGap(260, Short.MAX_VALUE))
+        );
+
+        menu.addTab("Veja sua Agenda", veja_agenda);
 
         adicione_lembrete.setBorder(javax.swing.BorderFactory.createTitledBorder("Você está adicionando um Lembrete"));
 
