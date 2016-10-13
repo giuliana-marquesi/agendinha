@@ -6,6 +6,7 @@
 package JavaMVCViews;
 import JavaMVCControllers.*;
 import JavaMVCModels.*;
+import java.util.Date;
 
 
 
@@ -15,8 +16,8 @@ import JavaMVCModels.*;
  */
 public class NewJFrame extends javax.swing.JFrame {
     
-    private ControllerStringToModel controller = new ControllerStringToModel();
     private AgendaController ctrlAgenda = new AgendaController();
+    private Agenda agendinha;
     
     /**
      * Creates new form NewJFrame
@@ -34,14 +35,12 @@ public class NewJFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        confirmaAgenda = new javax.swing.JDialog();
-        jLabel4 = new javax.swing.JLabel();
-        Home = new javax.swing.JPanel();
+        home = new javax.swing.JPanel();
         quero_criar = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        Crie_Agenda = new javax.swing.JPanel();
+        crie_Agenda = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         nomeAgendaForm = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -51,35 +50,19 @@ public class NewJFrame extends javax.swing.JFrame {
         confirma = new javax.swing.JButton();
         menu = new javax.swing.JTabbedPane();
         adicione_lembrete = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        descricao = new javax.swing.JTextArea();
+        jLabel6 = new javax.swing.JLabel();
+        confirmAddLembrete = new javax.swing.JButton();
         modifique_lembrete = new javax.swing.JPanel();
         veja_lembrete = new javax.swing.JPanel();
         veja_agenda = new javax.swing.JPanel();
         modifique_agenda = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
         exclua_lembretes = new javax.swing.JPanel();
-
-        confirmaAgenda.setTitle("AgendaConfirmada");
-        confirmaAgenda.setAlwaysOnTop(true);
-
-        jLabel4.setText("jLabel4");
-
-        javax.swing.GroupLayout confirmaAgendaLayout = new javax.swing.GroupLayout(confirmaAgenda.getContentPane());
-        confirmaAgenda.getContentPane().setLayout(confirmaAgendaLayout);
-        confirmaAgendaLayout.setHorizontalGroup(
-            confirmaAgendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(confirmaAgendaLayout.createSequentialGroup()
-                .addGap(99, 99, 99)
-                .addComponent(jLabel4)
-                .addContainerGap(250, Short.MAX_VALUE))
-        );
-        confirmaAgendaLayout.setVerticalGroup(
-            confirmaAgendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(confirmaAgendaLayout.createSequentialGroup()
-                .addGap(64, 64, 64)
-                .addComponent(jLabel4)
-                .addContainerGap(221, Short.MAX_VALUE))
-        );
-
-        confirmaAgenda.getAccessibleContext().setAccessibleParent(confirma);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -96,30 +79,30 @@ public class NewJFrame extends javax.swing.JFrame {
 
         jLabel5.setText("Benvindo ao NotMemmento!");
 
-        javax.swing.GroupLayout HomeLayout = new javax.swing.GroupLayout(Home);
-        Home.setLayout(HomeLayout);
-        HomeLayout.setHorizontalGroup(
-            HomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(HomeLayout.createSequentialGroup()
-                .addGroup(HomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(HomeLayout.createSequentialGroup()
+        javax.swing.GroupLayout homeLayout = new javax.swing.GroupLayout(home);
+        home.setLayout(homeLayout);
+        homeLayout.setHorizontalGroup(
+            homeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(homeLayout.createSequentialGroup()
+                .addGroup(homeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(homeLayout.createSequentialGroup()
                         .addGap(109, 109, 109)
                         .addComponent(jLabel8))
-                    .addGroup(HomeLayout.createSequentialGroup()
+                    .addGroup(homeLayout.createSequentialGroup()
                         .addGap(188, 188, 188)
-                        .addGroup(HomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(homeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel7)
-                            .addGroup(HomeLayout.createSequentialGroup()
+                            .addGroup(homeLayout.createSequentialGroup()
                                 .addGap(39, 39, 39)
                                 .addComponent(jLabel5))))
-                    .addGroup(HomeLayout.createSequentialGroup()
+                    .addGroup(homeLayout.createSequentialGroup()
                         .addGap(267, 267, 267)
                         .addComponent(quero_criar)))
                 .addContainerGap(140, Short.MAX_VALUE))
         );
-        HomeLayout.setVerticalGroup(
-            HomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, HomeLayout.createSequentialGroup()
+        homeLayout.setVerticalGroup(
+            homeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, homeLayout.createSequentialGroup()
                 .addGap(41, 41, 41)
                 .addComponent(jLabel5)
                 .addGap(32, 32, 32)
@@ -131,8 +114,8 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addGap(84, 84, 84))
         );
 
-        Crie_Agenda.setBorder(javax.swing.BorderFactory.createTitledBorder("Criar Agenda"));
-        Crie_Agenda.setVisible(false);
+        crie_Agenda.setBorder(javax.swing.BorderFactory.createTitledBorder("Criar Agenda"));
+        crie_Agenda.setVisible(false);
 
         jLabel1.setText("Nome da Agenda:");
 
@@ -160,34 +143,34 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout Crie_AgendaLayout = new javax.swing.GroupLayout(Crie_Agenda);
-        Crie_Agenda.setLayout(Crie_AgendaLayout);
-        Crie_AgendaLayout.setHorizontalGroup(
-            Crie_AgendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Crie_AgendaLayout.createSequentialGroup()
-                .addGroup(Crie_AgendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Crie_AgendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(Crie_AgendaLayout.createSequentialGroup()
+        javax.swing.GroupLayout crie_AgendaLayout = new javax.swing.GroupLayout(crie_Agenda);
+        crie_Agenda.setLayout(crie_AgendaLayout);
+        crie_AgendaLayout.setHorizontalGroup(
+            crie_AgendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(crie_AgendaLayout.createSequentialGroup()
+                .addGroup(crie_AgendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(crie_AgendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(crie_AgendaLayout.createSequentialGroup()
                             .addContainerGap()
-                            .addGroup(Crie_AgendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(crie_AgendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(jLabel3)
                                 .addComponent(jLabel2)
                                 .addComponent(tipoForm)
                                 .addComponent(nomeDonoForm, javax.swing.GroupLayout.DEFAULT_SIZE, 428, Short.MAX_VALUE)))
-                        .addGroup(Crie_AgendaLayout.createSequentialGroup()
+                        .addGroup(crie_AgendaLayout.createSequentialGroup()
                             .addContainerGap()
                             .addComponent(jLabel1))
-                        .addGroup(Crie_AgendaLayout.createSequentialGroup()
+                        .addGroup(crie_AgendaLayout.createSequentialGroup()
                             .addContainerGap()
                             .addComponent(nomeAgendaForm)))
-                    .addGroup(Crie_AgendaLayout.createSequentialGroup()
+                    .addGroup(crie_AgendaLayout.createSequentialGroup()
                         .addGap(233, 233, 233)
                         .addComponent(confirma)))
                 .addContainerGap(226, Short.MAX_VALUE))
         );
-        Crie_AgendaLayout.setVerticalGroup(
-            Crie_AgendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Crie_AgendaLayout.createSequentialGroup()
+        crie_AgendaLayout.setVerticalGroup(
+            crie_AgendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(crie_AgendaLayout.createSequentialGroup()
                 .addGap(42, 42, 42)
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
@@ -205,15 +188,50 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jLabel4.setText("Escreva o Lembrete:");
+
+        descricao.setColumns(20);
+        descricao.setRows(5);
+        jScrollPane1.setViewportView(descricao);
+
+        jLabel6.setText("ATENÇÂO: O lembrete terá a data e hora de criação gravadas nele.");
+
+        confirmAddLembrete.setText("Confirmar");
+        confirmAddLembrete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                confirmAddLembreteActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout adicione_lembreteLayout = new javax.swing.GroupLayout(adicione_lembrete);
         adicione_lembrete.setLayout(adicione_lembreteLayout);
         adicione_lembreteLayout.setHorizontalGroup(
             adicione_lembreteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 671, Short.MAX_VALUE)
+            .addGroup(adicione_lembreteLayout.createSequentialGroup()
+                .addGroup(adicione_lembreteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(adicione_lembreteLayout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addGroup(adicione_lembreteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel6)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 545, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4)))
+                    .addGroup(adicione_lembreteLayout.createSequentialGroup()
+                        .addGap(267, 267, 267)
+                        .addComponent(confirmAddLembrete)))
+                .addContainerGap(96, Short.MAX_VALUE))
         );
         adicione_lembreteLayout.setVerticalGroup(
             adicione_lembreteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(adicione_lembreteLayout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addComponent(jLabel4)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel6)
+                .addGap(18, 18, 18)
+                .addComponent(confirmAddLembrete)
+                .addContainerGap(32, Short.MAX_VALUE))
         );
 
         menu.addTab("Adicione Lembrete", adicione_lembrete);
@@ -257,15 +275,36 @@ public class NewJFrame extends javax.swing.JFrame {
 
         menu.addTab("Veja sua Agenda", veja_agenda);
 
+        modifique_agenda.setBorder(javax.swing.BorderFactory.createTitledBorder("Você está modificando sua agenda"));
+
+        jLabel9.setText("Novo nome da Agenda:");
+
+        jLabel10.setText("Novo nome do Dono:");
+
+        jLabel11.setText("Novo nome do Dono:");
+
         javax.swing.GroupLayout modifique_agendaLayout = new javax.swing.GroupLayout(modifique_agenda);
         modifique_agenda.setLayout(modifique_agendaLayout);
         modifique_agendaLayout.setHorizontalGroup(
             modifique_agendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 671, Short.MAX_VALUE)
+            .addGroup(modifique_agendaLayout.createSequentialGroup()
+                .addGap(46, 46, 46)
+                .addGroup(modifique_agendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel11)
+                    .addComponent(jLabel9)
+                    .addComponent(jLabel10))
+                .addContainerGap(452, Short.MAX_VALUE))
         );
         modifique_agendaLayout.setVerticalGroup(
             modifique_agendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(modifique_agendaLayout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addComponent(jLabel9)
+                .addGap(68, 68, 68)
+                .addComponent(jLabel10)
+                .addGap(35, 35, 35)
+                .addComponent(jLabel11)
+                .addContainerGap(96, Short.MAX_VALUE))
         );
 
         menu.addTab("Modifique sua Agenda", modifique_agenda);
@@ -287,10 +326,10 @@ public class NewJFrame extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Home, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(home, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addComponent(Crie_Agenda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(crie_Agenda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addContainerGap()))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
@@ -299,11 +338,11 @@ public class NewJFrame extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Home, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(home, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(Crie_Agenda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(crie_Agenda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addContainerGap()))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -319,8 +358,8 @@ public class NewJFrame extends javax.swing.JFrame {
         String nomeAgenda = nomeAgendaForm.getText();
         String nomeDono = nomeDonoForm.getText();
         String tipo = tipoForm.getText();
-        Agenda agendinha = controller.includesAgenda(nomeAgenda, nomeDono, tipo);
-        Crie_Agenda.setVisible(false);
+        agendinha = ctrlAgenda.createAgenda(nomeAgenda, nomeDono, tipo);
+        crie_Agenda.setVisible(false);
         
         System.out.println(ctrlAgenda.readAgenda(agendinha));
     }//GEN-LAST:event_confirmaActionPerformed
@@ -331,10 +370,15 @@ public class NewJFrame extends javax.swing.JFrame {
 
     private void quero_criarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quero_criarActionPerformed
         // TODO add your handling code here:
-        Crie_Agenda.setVisible(true);
-        Home.setVisible(false);
+        crie_Agenda.setVisible(true);
+        home.setVisible(false);
         
     }//GEN-LAST:event_quero_criarActionPerformed
+
+    private void confirmAddLembreteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmAddLembreteActionPerformed
+        // TODO add your handling code here:
+        ctrlAgenda.adicionaLembrete(agendinha, new Date(), descricao.getText());
+    }//GEN-LAST:event_confirmAddLembreteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -372,19 +416,25 @@ public class NewJFrame extends javax.swing.JFrame {
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel Crie_Agenda;
-    private javax.swing.JPanel Home;
     private javax.swing.JPanel adicione_lembrete;
+    private javax.swing.JButton confirmAddLembrete;
     private javax.swing.JButton confirma;
-    private javax.swing.JDialog confirmaAgenda;
+    private javax.swing.JPanel crie_Agenda;
+    private javax.swing.JTextArea descricao;
     private javax.swing.JPanel exclua_lembretes;
+    private javax.swing.JPanel home;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane menu;
     private javax.swing.JPanel modifique_agenda;
     private javax.swing.JPanel modifique_lembrete;

@@ -19,7 +19,7 @@ public class MainClass {
     /**
      * @param args the command line arguments
      */
-    private static ControllerStringToModel inicia = new ControllerStringToModel();
+    private static InitialController inicia = new InitialController();
     
     public static void main(String[] args) {
         
